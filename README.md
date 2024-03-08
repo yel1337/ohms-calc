@@ -11,7 +11,7 @@ This is a command-line interface (CLI) Ohms calculator written in C, designed to
 
 # How to Use:
 1. Clone the Repository: git clone https://github.com/yel1337/ohms-calc.git
-2. Compile the Code: cd cli-ohms-calculator then make
+2. Compile the Code: cd ohms-calc/ then gcc -o ohms ohms-calc.c
 3. Run the Program: ./ohms_calculator
 
 # Usage: 
