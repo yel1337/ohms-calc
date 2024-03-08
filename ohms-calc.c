@@ -80,7 +80,6 @@ int calculate(){
 }
 
 int main(){
- printf("Ohms-Calc by Daniel Salvaloza\n");
  //choices
  printf("1. Voltage\n");
  printf("2. Current\n");
