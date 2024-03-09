@@ -1,56 +1,75 @@
 #include <stdio.h>
 
-//Global variables
+/* Global variables */
 int option;
 int a,b,c;
-// as V in Ohms triangle. V=I*R
+
+/*  
+ * Wherein V in Ohms law is V=I*R
+ */  
 int voltage(int x, int y){
    float total;
    total = x*y;
    
-   //ampheres
+/* int x = Ampheres */
    printf("I = %dAmps\n", x);
-   //resistance
+
+/* int y = Resistance */
    printf("R = %dΩ\n", y);
    printf(": %.2f Volts\n", total);
 }
-// as I in Ohms triangle. I=V/R
+
+/* 
+ * Wherein I in Ohms law is I=V/R  
+ */
 int current(int x, int y){
    float total;
    total = (float)x/y;
    
-   //voltage
+/* int x = Voltage */
    printf("V = %dv\n", x);
-   //resistance
+
+/* int y = Resistance */
    printf("R = %dΩ\n", y);
    printf("Current is: %.2f\n", total);
 }
-//as R in Ohms triangle. R=V/I
+
+/*
+ * Wherein R in Ohms law is R=V/I
+ */ 
 int resistance(int x, int y){
    float total;
    total = (float)x/y;
    
-   //voltage
+/* int x = Voltage */
    printf("V = %dv\n", x);
-   //ampheres
+
+/* int y =  Ampheres */
    printf("I = %dAmps\n", y);
    printf("Resistance is: %.2f\n", total);
 }
+
 int calculate(){
 
- //voltage
- if(a == 1){
-    // then execute this block 
+/* Voltage */
+ if(a == 1)
+ {	 
+    /* If a = 1 will then execute this block */   
     int x,y;
-    printf("(Enter Current(I/A/Ampheres))\n"); printf("> "); scanf(" %d", &x); printf("(Enter Resistance(/R/Ohms))\n"); printf("> ");
+    printf("(Enter Current(I/A/Ampheres))\n"); 
+    printf("> "); 
+    scanf(" %d", &x); 
+    printf("(Enter Resistance(/R/Ohms))\n"); 
+    printf("> ");
     scanf(" %d", &y);
     
     voltage(x,y);
  } 
  
- //current
- else if(b == 1){
-    // then execute this block 
+/* Current */
+ else if(b == 1)
+ {   	 
+    /* If b = 1 will then execute this block */ 
     int x,y;
     printf("(Enter Voltage(V))\n");
     printf("> ");
@@ -62,9 +81,10 @@ int calculate(){
     current(x,y);
  } 
  
- //resistance
- else if(c == 1){
-    // then execute this block 
+ /* Resistance */
+ else if(c == 1)
+ {	 
+    /* If c = 1 will then execute this block */ 
     int x,y;
     printf("(Enter Voltage(V))\n");
     printf("> ");
@@ -80,6 +100,7 @@ int calculate(){
 }
 
 int main(){
+ printf("Ohms-Calc by Daniel Salvaloza\n");
  //choices
  printf("1. Voltage\n");
  printf("2. Current\n");
