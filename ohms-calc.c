@@ -107,17 +107,16 @@ int main()
  printf("** Upon running the program, follow the prompts to input values and select the desired calculation. **\n");
  printf("** Choose from options such as calculating resistance (R), voltage (V), current (I). **\n");
  printf("** Enter the known values when prompted and get the result instantly. **\n"); 
-//choices 
+	
+ /* Values */ 
  printf("\n(Enter 1 for Voltage(V), 2 for Current(I/A), 3 for Resistance(Ω))\n");
  printf("1. Voltage\n");
  printf("2. Current\n");
  printf("3. Resistance\n");
- 
  printf("> "); 
- //option prompt
  scanf(" %d", &option);
  
- //user input validation
+ /* User input validation */
  switch(option){
  case 1:
 	a = 1;
