@@ -151,18 +151,26 @@ int main()
     } 
   }
 
+ /* 
+  * If user input is greater than prompt
+  */
  if(option > s)
   {
 	    printf("Invalid input...\n");
 	    printf(">");
             scanf(" %d", &option);
+	  
+    /* If input still not valid then execute this block*/
     while(option > s)
     {
 	    printf("Invalid input...\n");
 	    printf(">");
 	    scanf(" %d", &option);
+
+	    /* If input is valid then execute this block */
 	    if(option <= s)
 	    {		    
+		 /* Normally goes here */   
                  if(option == 1)
                  {
                       a = true;
@@ -184,7 +192,7 @@ int main()
 
 	    }
     }
-
+    /* Default */
     if(option == 1)
     {
             a = true;
@@ -199,6 +207,7 @@ int main()
     {
 	    c = true;
 	    calculate();
-    } 
+    }
+	  return 0;
   }
 }
