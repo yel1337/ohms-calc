@@ -99,14 +99,20 @@ int calculate(){
  }
 }
 
-int main(){
 
- //choices
+int main() 
+{
+ printf("This is a command-line interface (CLI) Ohms calculator written in C, designed to quickly and efficiently calculate resistance, voltage  and current in electrical circuits based on Ohm's Law.\n");
+ printf("\nUsage: \n");
+ printf("** Upon running the program, follow the prompts to input values and select the desired calculation. **\n");
+ printf("** Choose from options such as calculating resistance (R), voltage (V), current (I). **\n");
+ printf("** Enter the known values when prompted and get the result instantly. **\n"); 
+//choices 
+ printf("\n(Enter 1 for Voltage(V), 2 for Current(I/A), 3 for Resistance(Ω))\n");
  printf("1. Voltage\n");
  printf("2. Current\n");
  printf("3. Resistance\n");
- //reminder
- printf("(Enter 1 for Voltage(V), 2 for Current(I), 3 for Resistance(R))\n");
+ 
  printf("> "); 
  //option prompt
  scanf(" %d", &option);
