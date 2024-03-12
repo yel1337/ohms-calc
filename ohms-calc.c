@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+
 /* Global variables */
+int calculate();
 int option;
 bool a,b,c;
 
@@ -8,7 +11,9 @@ bool a,b,c;
  * Wherein V in Ohms law is V=I*R
  */  
 int voltage(int x, int y){
+   int p; /* for temp */
    float total;
+   char z[1];
    total = x*y;
 
    printf("--------------\n");   
@@ -19,15 +24,52 @@ int voltage(int x, int y){
    printf("R = %dΩ\n", y);
    printf("(V = I*R)\n");
    printf("= %.2f Volts\n", total); 
-   printf("--------------\n");   
+   printf("--------------\n");
+
+   printf("Proceed with another one? (Y for yes, N for no)\n");
+   printf("> ");
+   scanf(" %c", &z);
+   
+   if(z[0] == 'Y' || z[0] == 'y')
+   {
+
+         printf("\n(Enter 1 for Voltage(V), 2 for Current(I/A), 3 for Resistance(Ω))\n");
+         printf("1. Voltage\n");
+         printf("2. Current\n");
+         printf("3. Resistance\n");
+         printf("> "); 
+         
+	 scanf("%d", &p);
+	 if(p == 1){ 
+		 a = true;
+		 calculate();
+	 } 
+         else if(p == 2){
+		 b = true;
+		 calculate();
+	 }
+	 else if(p == 3){
+		 c = true;
+		 calculate();
+	 }
+   }  
+   
+    else if(z[0] == 'N' || z[0] == 'n')
+    {
+	 exit(0);
+    }else {
+	   printf("Invalid Input\n");
+   }
 }
 
 /* 
  * Wherein I in Ohms law is I=V/R  
  */
 int current(int x, int y){
+   int p; /* for temp */
    float total;
-   total = (float)x/y;
+   char z[1];
+   total = x*y;
    
    printf("--------------\n");   
 /* int x = Voltage */
@@ -37,15 +79,52 @@ int current(int x, int y){
    printf("R = %dΩ\n", y);
    printf("(I = V/R)\n");
    printf("= %.2f\n", total);
-   printf("--------------\n");   
+   printf("--------------\n");
+
+   printf("Proceed with another one? (Y for yes, N for no)\n");
+   printf("> ");
+   scanf(" %c", &z);
+
+   if(z[0] == 'Y' || z[0] == 'y')
+   {
+
+         printf("\n(Enter 1 for Voltage(V), 2 for Current(I/A), 3 for Resistance(Ω))\n");
+         printf("1. Voltage\n");
+         printf("2. Current\n");
+         printf("3. Resistance\n");
+         printf("> ");
+
+	 scanf("%d", &p);
+	 if(p == 1){
+		 a = true;
+		 calculate();
+	 }
+         else if(p == 2){
+		 b = true;
+		 calculate();
+	 }
+	 else if(p == 3){
+		 c = true;
+		 calculate();
+	 }
+   }
+
+    else if(z[0] == 'N' || z[0] == 'n')
+    {
+	 exit(0);
+    }else {
+	   printf("Invalid Input\n");
+   }
 }
 
 /*
  * Wherein R in Ohms law is R=V/I
  */ 
 int resistance(int x, int y){
+   int p; /* for temp */
    float total;
-   total = (float)x/y;
+   char z[1];
+   total = x*y;
    
    printf("--------------\n");   
 /* int x = Voltage */
@@ -55,7 +134,42 @@ int resistance(int x, int y){
    printf("I = %dAmps\n", y);
    printf("(R = V/I)\n");
    printf("= %.2f\n", total);
-   printf("--------------\n");   
+   printf("--------------\n");
+
+   printf("Proceed with another one? (Y for yes, N for no)\n");
+   printf("> ");
+   scanf(" %c", &z);
+
+   if(z[0] == 'Y' || z[0] == 'y')
+   {
+
+         printf("\n(Enter 1 for Voltage(V), 2 for Current(I/A), 3 for Resistance(Ω))\n");
+         printf("1. Voltage\n");
+         printf("2. Current\n");
+         printf("3. Resistance\n");
+         printf("> ");
+
+	 scanf("%d", &p);
+	 if(p == 1){
+		 a = true;
+		 calculate();
+	 }
+         else if(p == 2){
+		 b = true;
+		 calculate();
+	 }
+	 else if(p == 3){
+		 c = true;
+		 calculate();
+	 }
+   }
+
+    else if(z[0] == 'N' || z[0] == 'n')
+    {
+	 exit(0);
+    }else {
+	   printf("Invalid Input\n");
+   }
 }
 
 int calculate(){
@@ -122,13 +236,15 @@ int main()
  printf("1. Voltage\n");
  printf("2. Current\n");
  printf("3. Resistance\n");
- printf("> "); 
+ printf("> ");
+ 
  /* Values(1,2,3) = option */
  scanf(" %d", &option);
  
  /* User input validation */
  int s = 3;
 
+test:
  while(option <= s)
   {
     if(option == 1)
@@ -151,26 +267,18 @@ int main()
     } 
   }
 
- /* 
-  * If user input is greater than prompt
-  */
  if(option > s)
   {
 	    printf("Invalid input...\n");
 	    printf(">");
             scanf(" %d", &option);
-	  
-    /* If input still not valid then execute this block*/
     while(option > s)
     {
 	    printf("Invalid input...\n");
 	    printf(">");
 	    scanf(" %d", &option);
-
-	    /* If input is valid then execute this block */
 	    if(option <= s)
 	    {		    
-		 /* Normally goes here */   
                  if(option == 1)
                  {
                       a = true;
@@ -192,7 +300,7 @@ int main()
 
 	    }
     }
-    /* Default */
+
     if(option == 1)
     {
             a = true;
@@ -207,7 +315,6 @@ int main()
     {
 	    c = true;
 	    calculate();
-    }
-	  return 0;
+    } 
   }
 }
