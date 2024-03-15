@@ -18,7 +18,7 @@ This is a command-line interface (CLI) Ohms calculator written in C, designed to
 2. Open command prompt/CMD and clone the repository
 3. Compile it by typing the command: gcc -o ohms ohms-calc.c then ./ohms
 # How to Use: (In MacOS)
-1. Similar to linux, make sure gcc is installed.
+1. Similar as in linux, make sure gcc is installed.
 2. Compile the code.
 
 # Usage: 
